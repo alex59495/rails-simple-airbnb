@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>All our flats</h1>
+    <p>All <%= @flats.length %> flats</p>
+    <div class="row">
+    <% @flats.each do |flat| %>
+        <div class="col-4">
+            <div class="card">
+                <%= image_tag "App1.jfif", class: "card-img"%>
+                <div class="card-body">
+                    <div class="flat-card-title"><%= flat.name %></div>
+                    <p><%= flat.address %></p>
+                    <div class="flex">
+                        <div class="flex">
+                            <i class="fas fa-male"></i>
+                            <%= flat.number_of_guests %>
+                        </div>
+                        <div class="flex">
+                            <i class="fas fa-dollar-sign"></i>
+                            <%= flat.price_per_night %>
+                        </div>
+                    </div>
+                    <div class="flat-card-actions">
+                    <%= link_to "More info", flat_path(flat)%>
+                    <%= link_to "Edit", edit_flat_path(flat), class: "text-warning"%>
+                    <%= link_to "Remove", flat_path(flat), class: "text-danger", method: :delete, data: { confirm: "Are you sure?" }%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</div>

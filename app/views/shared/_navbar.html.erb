@@ -1,0 +1,10 @@
+<div class="navbar">
+<div class="navbar-left"><h1>Simple AirBnb</h1></div>
+<div class="navbar-right d-flex">
+<%= simple_form_for flats_path, method: :post do |f|%>
+    <%= f.text_field :name, placeholder: "Search for a flat" %>
+    <%= f.submit "Search" %>
+<% end %>
+<%= link_to "Add Flat", new_flat_path %>
+</div>
+</div>
