@@ -2,7 +2,7 @@ class FlatsController < ApplicationController
     before_action :find_flat, only: [:show, :destroy, :edit, :update]
 
     def index
-        @flats = Flat.all
+        @flats = Flat.search(params[:query])
     end
     def show
     end
@@ -28,7 +28,7 @@ class FlatsController < ApplicationController
     private
 
     def params_flat
-        params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
+        params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests, :search)
     end
     def find_flat
         @flat = Flat.find(params[:id])
