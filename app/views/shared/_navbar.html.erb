@@ -1,10 +1,12 @@
-<div class="navbar">
-<div class="navbar-left"><h1>Simple AirBnb</h1></div>
+<div class="navbar navbar-lewagon">
+<div class="navbar-left">
+    <%= link_to "Simple AirBnb", flats_path %>
+</div>
 <div class="navbar-right d-flex">
 <%= simple_form_for flats_path, method: :post do |f|%>
     <%= f.text_field :name, placeholder: "Search for a flat" %>
-    <%= f.submit "Search" %>
+    <%= f.submit "Search", class: "btn btn-outline-success ml-2" %>
 <% end %>
-<%= link_to "Add Flat", new_flat_path %>
+<%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-primary ml-2" %>
 </div>
 </div>

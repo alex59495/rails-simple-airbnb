@@ -1,20 +1,20 @@
-<div class="container">
+<div class="container mt-3">
     <h1>All our flats</h1>
     <p>All <%= @flats.length %> flats</p>
     <div class="row">
     <% @flats.each do |flat| %>
         <div class="col-4">
-            <div class="card">
-                <%= image_tag "App1.jfif", class: "card-img"%>
+            <div class="flat-card">
+                <div class="flat-card-img" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200')"></div>
                 <div class="card-body">
                     <div class="flat-card-title"><%= flat.name %></div>
                     <p><%= flat.address %></p>
-                    <div class="flex">
-                        <div class="flex">
+                    <div class="d-flex">
+                        <div class="d-flex">
                             <i class="fas fa-male"></i>
-                            <%= flat.number_of_guests %>
+                            <span><%= flat.number_of_guests %></span>
                         </div>
-                        <div class="flex">
+                        <div class="d-flex">
                             <i class="fas fa-dollar-sign"></i>
                             <%= flat.price_per_night %>
                         </div>

@@ -1,13 +1,50 @@
-<div class="banner" style="background-image: url('background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200')">
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200')">
 </div>
-<div class="show-flat-card">
-test
+<div class="row">
+    <div class="col-8">
+        <div class="show-flat-card">
+            <h1><%= @flat.name %></h1>
+            <h3><%= @flat.address %></h3>
+        </div>
+        <div class="show-flat-card">
+            <h2>A bit more about this flat...</h2>
+            <p><%= @flat.description %></p>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="show-flat-card">
+            <h2>Book this place!</h2>
+            <%= simple_form_for flats_path, method: :post do |f|%>
+                <%= f.text_field :entry, placeholder: "Entry" %>
+                <%= f.text_field :leaving, placeholder: "Leaving" %>
+                <%= f.submit "Book", class: "btn btn-success"%>
+            <% end %>
+        </div>
+        <div class="show-flat-card">
+        <h2>Details</h2>
+        <div class="d-flex">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-male"></i>
+                <%= @flat.number_of_guests %>
+            </div>
+            <div class="d-flex ml-3 align-items-center">
+                <i class="fas fa-dollar-sign"></i>
+                <%= @flat.price_per_night %>
+            </div>
+        </div>
+        </div>
+        <div class="show-flat-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <h6><strong>Share</strong></h6>
+                <div class="d-flex">
+                    <i class="fab fa-pinterest-square"></i>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </div>
-<div class="show-flat-card">
-</div>
-<div class="show-flat-card">
-</div>
-<div class="show-flat-card">
-</div>
-<div class="show-flat-card">
-</div>
+
