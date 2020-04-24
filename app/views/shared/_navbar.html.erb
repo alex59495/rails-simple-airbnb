@@ -3,9 +3,9 @@
     <%= link_to "Simple AirBnb", flats_path %>
 </div>
 <div class="navbar-right d-flex">
-<%= simple_form_for flats_path, method: :post do |f|%>
-    <%= f.text_field :name, placeholder: "Search for a flat" %>
-    <%= f.submit "Search", class: "btn btn-outline-success ml-2" %>
+<%= form_tag flats_path, method: :post, class: "form_inline" do %>
+    <%= text_field_tag :query, "", placeholder: "Search..." %>
+    <%= submit_tag "Search", class: "btn btn-outline-success ml-2" %>
 <% end %>
 <%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-primary ml-2" %>
 </div>
